@@ -25,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				configuration.server = "https://tranquil-depths-67396.herokuapp.com/parse"
 			})
 		)
+		if PFUser.current() != nil{
+			let main = UIStoryboard(name: "Main", bundle: nil)
+			let feedNaviagationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
+			
+			window?.rootViewController = feedNaviagationController
+		}
 		
 		return true
 	}
